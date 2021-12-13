@@ -19,9 +19,9 @@ def create_database(db_name):
     cursor.execute(sql)
     logging.info("State Table Created")
 
-    #Saves File
+    # Saves File
     connection.commit()
-    #Closes Database
+    # Closes Database
     connection.close()
 
 def import_data(db_name):
@@ -51,5 +51,5 @@ with open('States.csv', mode='r', encoding='utf-8-sig') as state_csv:
         state_information[row[0]] = {"state":row[0], "capital":row[1], "population":row[2]}
     logging.info("Records Extracted")
 
-#Step Three: Import Nested Dictionary to DB Table
+# Step Three: Import Nested Dictionary to DB Table
 import_data(database_name)
